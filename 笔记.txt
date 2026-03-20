@@ -1,0 +1,40 @@
+第一个教训
+保存！！！！！！
+
+//单行注释
+/*
+多行注释
+*/
+
+规范格式保证在使用不同编译器时不出问题
+main(void)
+
+       只要求不小于16位  至少32位 至少64
+short=<int           =<long     longlong
+一般64位系统short16位，int32位，long在Windows32位unix/linux64位
+32位系统中16位，32位，32位
+特殊字符需要\转义后才能被printf正常输出例如\本身，？ " '
+char里赋值八进制\0后数字，0可以省略；十六进制\x后数字
+可以在char前加unsigned或signed,处理字符时不需要
+
+flout32位double64位
+flout至少能精确表示六位有效数字 double至少10位
+默认浮点数是double，计算后截取为float，计算速度慢，可加f后缀声明存为float类型,L后缀为long double
+c99标准新加入了常量可以加0x前缀然后用p代替e例如 0x1.2p2是1.2 * 2*2
+printf里打印十进制浮点%f，%e来打印指数计数法的，支持十六进制的可以把e换成a，
+%f,%e,%a期望是double，打印long double 要用%Le，%La或%La否则会出错
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
