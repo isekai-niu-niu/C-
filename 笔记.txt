@@ -23,6 +23,9 @@ flout至少能精确表示六位有效数字 double至少10位
 c99标准新加入了常量可以加0x前缀然后用p代替e例如 0x1.2p2是1.2 * 2*2
 printf里打印十进制浮点%f，%e来打印指数计数法的，支持十六进制的可以把e换成a，
 %f,%e,%a期望是double，打印long double 要用%Le，%La或%La否则会出错
+%f在scanf里是传入float，在printf里是格式化为douuble；%Lf在scanf是double
+%Lf中L大写时在printf里是long double，小写时还是double
+
 
 
 
