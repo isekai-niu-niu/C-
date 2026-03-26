@@ -16,6 +16,7 @@ short=<int           =<long     longlong
 特殊字符需要\转义后才能被printf正常输出例如\本身，？ " '
 char里赋值八进制\0后数字，0可以省略；十六进制\x后数字
 可以在char前加unsigned或signed,处理字符时不需要
+sizeof ()函数输出值为无符号整数,但不确定具体是那种
 
 flout32位double64位
 flout至少能精确表示六位有效数字 double至少10位
@@ -23,22 +24,17 @@ flout至少能精确表示六位有效数字 double至少10位
 c99标准新加入了常量可以加0x前缀然后用p代替e例如 0x1.2p2是1.2 * 2*2
 printf里打印十进制浮点%f，%e来打印指数计数法的，支持十六进制的可以把e换成a，
 %f,%e,%a期望是double，打印long double 要用%Le，%La或%La否则会出错
+printf("%c",'$')这样打印单个符号，字符
+%a.bd,这个转义成有符号十进制数里a声明使用的长度,不足时会自动增长,b声明取小数点后几位.
+例如%5.5f输入值为233.3,输出233.30000(第一个会优先满足第二个,如果长度低于a会留出多余的位置为空格，默认右对齐)
+
+
 %f在scanf里是传入float，在printf里是格式化为douuble；%Lf在scanf是double
 %Lf中L大写时在printf里是long double，小写时还是double
-预处理里写#define NAME value 是定义一个名叫NAME值为value的常量，名字最好全大写
+预处理里写#define NAME value 是定义一个名叫NAME值为value的常量，名字最好全大写，不写等号
+还可以定义字符和字符串，比如#define A 'a' #define ABC "abc"
 
+在内部也可以用const定义变量只读 const char forever[20] = "never be change"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+我的电脑上尝试乘法除法一起时按从左到右顺序计算，例如8 / 4 * 2 输出4而不是1
 
